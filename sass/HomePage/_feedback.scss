@@ -1,0 +1,96 @@
+.feedback {
+  max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 $pd-11 - 4;
+    .feedback_content {
+        .feedback_item {
+            .feedback_video {
+                @include stylePlayButton;
+            }
+            .feedback_details {
+                padding: 0 $pd-7;
+                .feedback_company {
+                    padding-bottom: $pd-1;
+                    span:first-child {
+                        @include styleText($fs-4, $color-gray-1, $fw-0);
+                    }
+                    span:nth-child(2) {
+                        border-left: 1px solid $color-gray-1;
+                        margin-left: $pd-1;
+                        img {
+                            height: 36px;
+                            display: inline-block;
+                            width: unset;
+                            margin-left: $pd-2;
+                        }
+                    }
+                }
+                .feedback_quote {
+                    p {
+                        @include styleText($fs-5 - 2, $color-green-2, $fw-0);
+                        line-height: $line-height-4;
+                        font-family: "Lora", serif;
+                    }
+                }
+            }
+        }
+    }
+    .feedback_modal {
+        .feedback_modal-item {
+            overflow-y: hidden;
+            .modal-dialog {
+                max-width: unset;
+                .modal-content {
+                    max-width: 900px;
+                    max-height: 90vh; 
+                    overflow-y: auto; 
+                    border: none;
+                    .modal-body {
+                        padding: 0;
+                        video {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive("extra-large"){
+    .feedback {
+        .feedback_content{
+            .feedback_item {
+                .feedback_video{
+                    width: 50%;
+                    flex: none;
+                    max-width: none;
+                }
+                .feedback_details{
+                    width: 50%;
+                    flex: none;
+                    max-width: none;
+                }
+            }
+        }   
+    }
+}
+@include responsive("large"){
+    .feedback {
+        .feedback_content{
+             .owl-nav button.owl-prev, .owl-nav button.owl-next {
+                top: 21%;
+            }
+            .feedback_item {
+                .feedback_video{
+                    width: 100%;
+                }
+                .feedback_details{
+                    padding-top: 30px;
+                    width: 100%;
+                }
+            }
+        }   
+    }
+}

@@ -1,0 +1,100 @@
+@mixin  styleText ($fs, $color, $fw) {
+    font-size: $fs;    
+    color: $color;
+    font-weight: $fw;
+}
+
+@mixin styleButton ($fs, $color, $fw, $pd-y, $pd-x, $bg-color, $border-color){
+    display: inline-block;
+    font-size: $fs;
+    color: $color;
+    font-weight: $fw;
+    padding: $pd-y $pd-x;
+    background-color: $bg-color;
+    border: 1px solid $border-color;
+}
+@mixin hoverButton($color, $bg-color, $border-color){
+    color: $color;
+    background-color: $bg-color;
+    border-color: $border-color;
+}
+
+@mixin styleFormSearch ($left, $pd, $pd-left,$border-radius,$fs){
+    flex-wrap: nowrap;
+    position: relative;
+    i{
+        color: $color-gray-3; 
+        font-size: $fs-0;
+        position: absolute;
+        left: $left;
+     }
+     .form-control{
+         padding: $pd;
+         padding-left: $pd-left;
+         box-shadow: none;
+         border-color: $color-gray-4;
+         border-right: none;
+         border-radius: $border-radius 0 0 $border-radius;
+         height: 100%;
+         width: 100%;
+         &::placeholder{
+             color: $color-gray-2  ;
+             font-size: $fs;
+         }
+         &:focus, &:hover{
+             border-color:$color-gray-3;
+             border-right: none;
+         }
+     }
+}
+
+@mixin styleBadge ($pd-y, $pd-x, $border-color) {
+    padding: $pd-y  $pd-x;
+    border: 1px solid $border-color;
+    border-radius: 999px;
+}
+@mixin  styleHeading{
+    font-size:  $fs-5;
+    color: $color-gray-2;
+    font-weight: $fw-1;
+    line-height: $line-height-2;
+    padding-bottom: $pd-3;
+    @include responsive("medium"){
+        font-size: 28px;
+    }
+
+} 
+
+@mixin styleCheckedIcon {
+  width: 24px;
+  height: 24px;
+    margin-right: $mg-1 - 2;
+}
+@mixin stylePlayButton{
+    position: relative;
+    &::after{
+        content: "";
+        background: url(../img/desktop-play-button.png) no-repeat;
+        background-size: 80px;
+        display: inline-block;
+        height: 80px;
+        width: 80px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+  
+} 
+
+@mixin responsive($screen){
+    @if map-has-key($map: $break-points, $key: $screen){
+        $value: map-get($map: $break-points, $key: $screen);
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    }
+    @else{
+        @warn "`{$screen}` isn't exist in breakpoints";
+    }
+}

@@ -1,0 +1,111 @@
+.logoMaker {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 $pd-11 - 4;
+    .logoMaker_content {
+        background: $color-blue-0  ;
+        background-size: cover;
+        background-position: center;
+        color: $color-white-0;
+        overflow: hidden;
+        position: relative;
+            .logoMaker_info{
+                padding: $pd-11 0 $pd-11 $pd-12;
+                // width: 30%;
+                .logoMaker_logo {
+                    padding-bottom: $pd-10;
+                    img {
+                        width: 188px;
+                        height: 26px;
+                    }
+                    .badge--beta {
+                        color: $color-white-0;
+                    }
+                }
+                h2 {
+                    @include styleHeading;
+                    color: $color-white-0;
+                    margin-bottom: $pd-0;
+                   
+                    span {
+                        font-family: "Playfair Display", serif;
+                    }
+                }
+                p {
+                    line-height: $line-height-3;
+                    margin-bottom: $mg-4;
+                }
+            }
+            .logoMaker_img{
+                &.desktop-img{
+                    display: flex;
+                    align-items: center;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    img{
+                        width: 100%;
+                    }
+                }
+                &.tablet-img{
+                    display: none;
+                    img{
+                        width: 100%;
+                    }
+                }
+               
+            }
+           
+            
+            
+        }
+    }
+    @include responsive("extra-large"){
+        .logoMaker {
+            .logoMaker_content {
+                .logoMaker_img{
+                    &.desktop-img{
+                        left: -10%;
+                        right: -10%;
+                    }
+                   
+                }
+            }
+        }
+    }
+    
+    @include responsive("large"){
+        .logoMaker {
+            .logoMaker_content {
+                .logoMaker_info{
+                    width: 100%;
+                }
+                .logoMaker_img{
+                    margin-top: -25%;
+                    &.desktop-img{
+                       display: none;
+                    }
+                    &.tablet-img{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsive("medium"){
+        .logoMaker {
+            padding: 0;
+            .logoMaker_content {
+                .logoMaker_info{
+                    padding: 48px 24px;
+                }
+                .logoMaker_img{
+                    margin-top: -14%;
+                   
+                }
+            }
+        }
+    }

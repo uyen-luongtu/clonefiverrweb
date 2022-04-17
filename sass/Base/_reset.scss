@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html{
+    font-family: 'Roboto', sans-serif;
+    font-size: $fs-0;
+    color: $color-gray-0;
+   line-height: normal;
+
+}
+.section{
+    margin-bottom: $mg-2!important;
+}
+.zero-opacity{
+    opacity: 0!important;
+}

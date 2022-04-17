@@ -1,0 +1,157 @@
+.carousel{
+    .carousel_content{
+        height: 680px;
+        position: relative;
+    }
+    
+    .carousel_background{
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        .carousel-inner{
+            height: 100%;
+            .background_hero{
+                height: 100%;
+                position: relative; 
+                .background_caption{
+                    color: $color-white-0;
+                    position: absolute;
+                    right: 6%;
+                    bottom: 2%;
+                   .hero_star{
+                       color: $color-yellow-0;
+                       margin-bottom: $pd-0;
+                       font-size: $fs-2;
+                   } 
+                } 
+            }
+        }
+        
+    }
+    .carousel_search{
+        padding: 0 $pd-6;
+        max-width: 1400px;
+        height: 100%;
+        margin: 0 auto;
+        color: $color-white-0;
+        position: relative;
+        .carousel_search-content{
+            max-width: 650px;
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            
+            h3{
+                font-size: $fs-3;
+                line-height: $line-height-1;
+                padding-bottom: $pd-3;
+                span{
+                    font-family: 'Playfair Display', serif;
+                }
+            }
+            .search_form{
+                @include styleFormSearch(15px, $pd-0 - 2, $pd-7, $border-radius-0, $fs-1);
+                height: $height-1;
+                .button--green{
+                    height: 100%;
+                    border-radius: 0 $border-radius-1 $border-radius-1 0 ;
+                    font-size: $fs-0;
+                }
+                #carousel_form-searchInput{
+                    color: $color-gray-2;
+                    font-size: $fs-0;
+                    &::placeholder{
+                        color: $color-gray-3;
+                        font-size: $fs-0;
+                    }
+                   
+                }
+            }
+            .search_popular{
+                padding-top: $pd-3;
+                span{
+                    font-weight: $fw-2;
+                }
+                .popular-group{
+                    margin-left: $mg-1;
+                 a{
+                     margin-right: $mg-1;
+                     text-decoration: none;
+                     
+                 }  
+                }
+            }
+        }
+       
+    }
+ 
+}
+
+@include responsive("large"){
+    .carousel{
+        .carousel_content{
+            height: auto;
+            .carousel-inner{
+                .background_hero{
+                    background-color: #023a15; 
+        }
+    }
+        }
+        .carousel_background{           
+    .carousel-inner{       
+        .background_hero{       
+            .background_caption{
+                display: none;
+            }
+        }
+    }
+        }
+        .carousel_search{
+            .carousel_search-content{
+            max-width: unset;
+            position: static;
+            top:0;
+            transform: translateY(0);
+            width: 100%;
+            padding: 96px 64px;
+            .search_form{
+            display: block;
+            height: auto;
+            i{
+                top: 15px;
+            }
+            .form-control{
+                width: 100%;
+                height: 48px;
+                border-radius: 3px;
+            }
+            .button--green{
+                border-radius: 3px;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            }
+            .search_popular{
+            display: none!important;
+            }
+    }
+   
+}
+    }
+
+}
+@include responsive("medium"){
+    .carousel{
+        .carousel_search{
+            .carousel_search-content{
+                padding: 110px 0 60px 0;
+                h3{
+                    font-size: 34px;
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+}

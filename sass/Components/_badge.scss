@@ -1,0 +1,35 @@
+.badge--new{
+    @include styleText($fs-2, $color-pink-0,$fw-1);
+    text-transform: uppercase;
+    @include styleBadge($pd-5, $pd-0, $color-pink-0);
+    position: relative;
+    top: -2px;
+    margin-left: $mg-0;
+}
+.badge--new--blue{
+    @include styleText($fs-2, $color-white-0,$fw-1);
+    text-transform: uppercase;
+    @include styleBadge($pd-5, $pd-0, $color-blue-2);
+    background-color: $color-blue-2;
+    position: relative;
+    top: 1px;
+    margin-left: $mg-0;
+}
+.badge--beta{
+    @include styleText($fs-2, $color-blue-0,$fw-1);
+    text-transform: uppercase;
+    @include styleBadge($pd-5, $pd-0, $color-blue-0);
+    position: relative;
+    top: -2px;
+    margin-left: $mg-0;
+}
+.badge--white{
+    @include styleText($fs-1,$color-white-0,$fw-3);
+    @include styleBadge($pd-5 + 2, $pd-2, $color-white-0);
+    background-color: transparent;
+    transition: 0.5s;
+    &:hover{
+        background-color: $color-white-0;
+        color: $color-gray-2;
+    }
+}

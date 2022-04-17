@@ -1,0 +1,76 @@
+.freelancer{
+    background-color: $color-gray-12;
+  
+    .freelancer_content{
+      max-width: 1400px;
+        margin: 0 auto;
+        padding: $pd-8 $pd-11 - 4; 
+        position: relative;
+        h2{
+            padding-right: 100px;
+            @include styleHeading;
+        }
+        .freelancers_profile{
+          
+            .freelancers_item{
+                box-shadow: $box-shadow-1;
+              width: unset!important;
+              border: none;
+              img{
+                  height: 237px;
+                  transition: .5s;
+                  &:hover{
+                      opacity: 0.85;
+                  }
+              }
+              .freelancer_details{
+                  padding: $pd-2 $pd-1;
+                  img{
+                      height: 40px;
+                      width: 40px;
+                      border-radius: 50%;
+                  }
+                  .freelancer_text{
+                      padding-left: $pd-2;
+                      
+                      h4{
+                          @include styleText($fs-1, $color-gray-2, $fw-2);
+                          line-height: $line-height-0 - 3;
+                          margin-bottom: $mg-0 - 3;
+                        
+                      }
+                      p{
+                          @include styleText($fs-1, $color-gray-3, $fw-0);
+                          line-height: $line-height-0 - 3;
+                         margin-bottom: $mg-1;
+                      }
+                  }
+              }
+            }
+        }
+        .freelancers_seeMore{
+            position: absolute;
+            top: 19%;
+            right: 25px;
+                text-decoration: none;
+                color: $color-blue-0;
+              
+            
+        }
+    }
+}
+@include responsive("large"){
+    .freelancer{
+        .freelancer_content{
+            h2{
+                padding-right: 0;
+            }
+            .freelancers_seeMore{
+                left: 25px;
+                bottom: 10%;
+                top: unset;
+                right: unset;
+            }
+        }
+}
+}

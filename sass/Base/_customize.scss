@@ -1,0 +1,43 @@
+.owl-carousel {
+    position: relative;
+    .owl-nav {
+        button {
+            &.owl-prev,
+            &.owl-next {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                &:focus{
+                    outline: none;
+                }
+                &:hover{
+                    background-color: transparent;
+                   color: unset;
+                }
+                span {
+                    display: inline-block;
+                    font-size: $fs-5 + 5;
+                    background-color: $color-white-0;
+                    height: 48px;
+                    width: 48px;
+                    border-radius: 50%;
+                    box-shadow: $box-shadow-0;
+                    text-align: center;
+                    line-height: 45px;
+                   
+                }
+            }
+            &.owl-prev{
+
+left: -24px;
+
+            }
+            &.owl-next{
+
+                right: -24px;
+                
+                            }
+        }
+    }
+}

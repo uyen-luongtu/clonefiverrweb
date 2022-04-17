@@ -1,0 +1,221 @@
+
+#sidebar {
+    width: 272px;
+    position: fixed;
+    top: 0;
+    left: -272px;
+    height: 100vh;
+    z-index: 999;
+    background: $color-white-0;
+    color: $color-gray-3;
+    transition: all 0.3s;
+    overflow-y: scroll;
+  
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+
+// SIDEBAR HEADER
+
+#sidebar .sidebar-header {
+    padding: 20px;
+button{
+    font-size: $fs-0;
+    border-radius: $border-radius-1;
+    font-weight: $fw-0;
+}
+   
+}
+// SIDEBAR BODY
+#sidebar .sidebar-body{
+    padding: $pd-10;
+}
+#sidebar .sidebar-body li{
+    padding:  $pd-0 0;
+   
+}
+#sidebar .sidebar-body>li{
+    &:first-child a:hover{
+        color: $color-gray-0;
+    }
+    &:nth-child(4) a{
+        color: $color-green-3;
+    }
+    &:nth-child(5) a{
+        color: $color-green-0;
+    }
+}
+#sidebar li a{
+    text-decoration: none;
+    @include styleText($fs-0, $color-gray-3, $fw-0);
+    transition: .3s;
+}
+#sidebar .sidebar-body li a i.fa-plus{
+    font-size: $fs-1 - 2;
+}
+#sidebar .sidebar-body li ul{
+    padding-left: $pd-10;
+    margin-top: $pd-0;
+}
+#sidebar .sidebar-body .subMenu a{
+    padding-left:0;
+   
+}
+
+// SIDEBAR FOOTER
+#sidebar .sidebar-footer{
+    padding-right: $pd-10;
+    padding-left: $pd-10;
+}
+#sidebar .sidebar-footer>p{
+    padding-top: $pd-11;
+    padding-bottom: $pd-4;
+    color: $color-gray-2;
+    border-bottom: 1px solid $color-gray-4;
+}
+#sidebar .sidebar-footer .mainMenu{
+margin-top: $pd-2;
+}
+#sidebar .sidebar-footer .mainMenu>li{
+    padding: $pd-0 0;
+    &:first-child a:hover{
+        color: $color-gray-0;
+    }
+}
+#sidebar .sidebar-footer .subMenu{
+    margin-top: $pd-0;
+}
+#sidebar .sidebar-footer .subMenu li{
+    padding: $pd-0 $pd-2;
+} 
+#sidebar .sidebar-footer .subMenu span{
+    margin-right: $mg-5;
+    opacity: 0;
+} 
+#sidebar .sidebar-footer .subMenu a.active span{
+    opacity: 1;
+} 
+#sidebar .sidebar-footer i.fa-plus{
+    font-size: $fs-1 - 2;
+}
+
+
+// #sidebar ul p {
+//     color: #fff;
+//     padding: 10px;
+// }
+
+// #sidebar ul li a {
+//     padding: 10px;
+//     font-size: 1.1em;
+//     display: block;
+// }
+
+// #sidebar ul li a:hover {
+//     color: #7386D5;
+//     background: #fff;
+// }
+
+// #sidebar ul li.active>a,
+// a[aria-expanded="true"] {
+//     color: #fff;
+//     background: #6d7fcc;
+// }
+
+// a[data-toggle="collapse"] {
+//     position: relative;
+// }
+
+// .dropdown-toggle::after {
+//     display: block;
+//     position: absolute;
+//     top: 50%;
+//     right: 20px;
+//     transform: translateY(-50%);
+// }
+
+// ul ul a {
+//     font-size: 0.9em !important;
+//     padding-left: 30px !important;
+//     // background: #6d7fcc;
+// }
+
+// ul.CTAs {
+//     padding: 20px;
+// }
+
+// ul.CTAs a {
+//     text-align: center;
+//     font-size: 0.9em !important;
+//     display: block;
+//     border-radius: 5px;
+//     margin-bottom: 5px;
+// }
+
+// a.download {
+//     background: #fff;
+//     color: #7386D5;
+// }
+
+// a.article,
+// a.article:hover {
+//     background: #6d7fcc !important;
+//     color: #fff !important;
+// }
+
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+
+
+// #dismiss {
+//     width: 35px;
+//     height: 35px;
+//     line-height: 35px;
+//     text-align: center;
+//     background: #7386D5;
+//     position: absolute;
+//     top: 10px;
+//     right: 10px;
+//     cursor: pointer;
+//     -webkit-transition: all 0.3s;
+//     -o-transition: all 0.3s;
+//     transition: all 0.3s;
+// }
+
+// #dismiss:hover {
+//     background: #fff;
+//     color: #7386D5;
+// }

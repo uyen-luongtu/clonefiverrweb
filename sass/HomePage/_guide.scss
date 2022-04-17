@@ -1,0 +1,49 @@
+.guide{
+    .guide_content{
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 $pd-11 - 4;
+        .guide_list{
+            margin: 0 $mg-5 * (-1);
+            .guide_item{
+                padding:  0 $pd-0;
+                img{
+                    margin-bottom: $mg-1 + 4;
+                }
+                h4{
+                    @include styleText($fs-0 + 2, $color-gray-2, $fw-1);
+                    line-height: $line-height-5;
+                }
+                p{
+                    color: $color-gray-1;
+                }
+            }
+        }
+    }
+}
+@include responsive("large"){
+    .guide{
+        .guide_content{
+            .guide_list{
+                .guide_item{
+                    width: 50%;
+                    flex: none;
+                    max-width: none;
+                }
+            }
+        }
+    }
+}
+@include responsive("medium"){
+    .guide{
+        .guide_content{
+            .guide_list{
+                .guide_item{
+                    width: 100%;
+                    flex: none;
+                    max-width: none;
+                }
+            }
+        }
+    }
+}

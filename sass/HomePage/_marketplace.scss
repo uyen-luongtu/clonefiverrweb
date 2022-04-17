@@ -1,0 +1,80 @@
+.marketplace {
+    .marketplace_content {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0 $pd-1;
+        h2 {
+            @include styleHeading;
+        }
+        .marketplace_list {
+            flex-wrap: wrap;
+            .marketplace_item {
+                width: 20%;
+                text-align: center;
+                padding-bottom: $pd-9;
+                // &:hover{
+                //     a::after {
+                //     padding: 0 $pd-10;
+                //        border-color: $color-green-0;
+                //     }
+                // }
+               
+                a {
+                    text-decoration: none;
+                    position: relative;
+                    &:hover::after{
+                       
+                        padding: 0 $pd-10;
+                           border-color: $color-green-0;
+                      
+                    }
+                    &::after {
+                        content: "";
+                        display: inline-block; 
+                        box-sizing: content-box;                        
+                        width: 48px;
+                        border-bottom: 2px solid $color-gray-9;
+                        position: absolute;
+                        left: 50%;
+                        top: 27px;
+                        transform: translateX(-50%);
+                        margin-top: $pd-0;
+                        transition: all 0.2s ease-in-out;
+                    }
+                }
+                img {
+                    width: 48px;
+                    height: 48px;
+                    box-sizing: content-box;
+                    padding-bottom: $mg-1 + 3;
+                }
+                p {
+                    @include styleText($fs-0, $color-gray-8, $fw-0);
+                }
+            }
+        }
+    }
+}
+
+@include responsive("large"){
+    .marketplace {
+        .marketplace_content {
+            .marketplace_list {
+                .marketplace_item {
+                    width: calc(100% / 3);
+                }
+            }
+        }
+    }
+}
+@include responsive("medium"){
+    .marketplace {
+        .marketplace_content {
+            .marketplace_list {
+                .marketplace_item {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}

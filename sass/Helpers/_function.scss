@@ -1,0 +1,46 @@
+@each $stt in (1), (2), (3), (4), (5) {
+    .hero-#{$stt} {
+        background-image: url(../img/bg-hero--1792-#{$stt}.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    @include responsive("extra-large"){
+        .hero-#{$stt} {
+            background-image: url(../img/bg-hero--900-#{$stt}.png);
+            background-size: auto 100%;
+            background-position: top right;
+        }
+        .hero-1{
+            background-color: #023a15;
+        }
+        .hero-2{
+            background-color: #b64762;
+        }
+        .hero-3{
+            background-color: #540e1f;
+        }
+        .hero-4{
+            background-color: #023a15;
+        }
+        .hero-5{
+            background-color: #7d1a00;
+        }
+
+    }
+    @include responsive("large"){
+        .hero-#{$stt} {
+            background-image: none;
+        }
+    }
+}
+@each $stt in (1), (2), (3), (4), (5), (6), (7), (8), (9), (10) {
+    .service-#{$stt} {
+        background-image: url(../img/service-#{$stt}.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 345px;
+        border-radius: 3px;
+    }
+}

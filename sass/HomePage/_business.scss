@@ -1,0 +1,86 @@
+.business{
+    background-color: $color-blue-3;
+    .business_content{
+     max-width: 1400px;
+        margin: 0 auto;
+        padding: $pd-8 $pd-11 - 4;
+        .business_left{
+            color: $color-white-0;
+            padding-right: 5%;
+            .business-logo{
+                padding-bottom: $pd-6;
+            }
+            h2{
+                @include styleHeading;
+                color: $color-white-0;
+                margin-bottom: 0;
+                span{
+                    font-family: 'Playfair Display', serif;
+                }
+            }
+            &>p{
+                font-size: $fs-0 + 2;
+                line-height: $line-height-3;
+                padding-bottom: $pd-6;
+            }
+            .business_list{
+                margin-bottom: $mg-3;
+                .business_item{
+                    padding-bottom: $pd-2 + 2;
+                    p{
+                        display: flex;
+                        align-items: center;
+                        margin: 0;
+                     
+                    font-size: $fs-0 + 1;
+                        img{
+                        
+                            @include styleCheckedIcon;
+                           
+                        }
+                    }
+                   
+                }
+            }
+            .button--green{
+                font-size: $fs-0 + 1 ;
+                font-weight: $fw-3;
+                border-radius: $border-radius-1;
+            }
+        }
+        .business_right{
+        
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+@include responsive("large"){
+    .business {
+        .business_content{
+            padding: 48px $pd-11 - 4;
+            .business_left {
+                padding-right: 0;
+                padding-left: 0;
+                padding-bottom: 48px;
+                width: 100%;
+                flex: none;
+                max-width: none;
+            }
+            .business_right{
+                padding: 0;
+                width: 100%;
+                flex: none;
+                max-width: none;
+            }
+        }   
+    }
+}
+@include responsive("medium"){
+    .business{
+        .business_content{
+            padding: $pd-8 24px;
+}
+    }
+}

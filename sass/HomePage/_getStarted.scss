@@ -1,0 +1,100 @@
+.getStarted{
+   max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 $pd-11 - 4;
+    .getStarted_background{
+        background-color: #45091b;
+        border-radius: 3px;
+        // display: flex;
+        position: relative;
+        overflow: hidden;
+        .getStarted_content{
+           padding: 120px 96px;
+        //    z-index: 1;
+           position: relative;
+            h2{
+                max-width: 610px;
+               @include styleText($fs-3 + 6, $color-white-0, $fw-2);
+                line-height: $line-height-1;
+                padding-bottom: $pd-7;
+                span{
+                    font-family: 'Playfair Display', serif;
+                }
+            }
+            button{
+                font-size: $fs-0;
+                border-radius: $border-radius-1;
+            }
+        }
+        .getStarted_img{
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            img{
+                height: 100%;
+
+            }
+            &.desktop-img{
+
+            }
+            &.tablet-img{
+                display: none;
+            }
+        }
+    }
+   
+}
+@include responsive("extra-large"){
+    .getStarted{
+         .getStarted_background{
+             .getStarted_content{
+                 padding: 80px 32px;
+                 h2{
+                     font-size: 42px;
+                 }
+             }
+             .getStarted_img{
+                &.desktop-img{
+                    display: none;
+                }
+                &.tablet-img{
+                    display: block;
+                }
+             }
+        }
+    }
+}
+@include responsive("large"){
+    .getStarted{
+         .getStarted_background{
+             .getStarted_content{
+                padding: 64px 32px;
+                 h2{
+                max-width: 560px;
+                 }
+             }
+             .getStarted_img{
+                &.tablet-img{
+                    display: none;
+                }
+             }
+            
+        }
+    }
+}
+@include responsive("medium"){
+    .getStarted{
+         .getStarted_background{
+             .getStarted_content{
+                padding: 48px 24px;
+                h2{
+                max-width: unset;
+                font-size: 32px;
+                line-height: 44px;
+                padding-bottom: 20px;
+                }
+            }
+        }
+    }
+}
